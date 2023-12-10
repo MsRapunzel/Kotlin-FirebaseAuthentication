@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="semi_white">#FFFFFF</color>
+    <color name="accent">#bb271a</color>
+    <color name="grey">#ff424242</color>
+
+    <color name="background_opacity">#5B3C2828</color>
+    <color name="fill_form_opacity">#97492323</color>
+</resources>

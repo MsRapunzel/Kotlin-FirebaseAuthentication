@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/md_theme_light_background"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -18,9 +18,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/bottomAppBar"
         android:layout_gravity="bottom"
-        android:background="@color/white"
-        app:fabCradleMargin="10dp"
-        app:fabCradleRoundedCornerRadius="50dp"
+        android:background="@color/md_theme_light_onSecondary"
         tools:ignore="VisualLintBottomAppBar">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -38,11 +36,14 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:contentDescription="@string/test"
+        android:backgroundTint="@color/md_theme_light_primary"
+        android:contentDescription="@string/add"
         android:src="@drawable/baseline_add_24"
         app:layout_anchor="@id/bottomAppBar"
         app:maxImageSize="40dp"
-        app:tint="@color/accent" />
+        app:rippleColor="@color/md_theme_light_primary"
+        app:tint="@color/md_theme_light_onPrimary"
+        app:layout_anchorGravity="end|bottom"
+        android:layout_marginBottom="82dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

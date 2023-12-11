@@ -12,11 +12,6 @@
         android:icon="@drawable/baseline_whatshot_24"/>
 
     <item
-        android:id="@+id/fab"
-        android:title=""
-        android:enabled="false"/>
-
-    <item
         android:id="@+id/subscriptions"
         android:title="Subscriptions"
         android:icon="@drawable/baseline_subscriptions_24"/>

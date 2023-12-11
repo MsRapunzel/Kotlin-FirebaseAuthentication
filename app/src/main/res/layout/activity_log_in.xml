@@ -37,9 +37,10 @@
                     android:background="@drawable/lavender_border"
                     android:padding="8dp"
                     android:hint="Email"
+                    android:textColorHint="@color/md_theme_light_onPrimary"
                     android:drawableLeft="@drawable/baseline_email_24"
                     android:drawablePadding="8dp"
-                    android:textColor="@color/grey"/>
+                    android:textColor="@color/md_theme_light_onPrimary"/>
 
                 <EditText
                     android:layout_width="350dp"
@@ -49,8 +50,10 @@
                     android:background="@drawable/lavender_border"
                     android:padding="8dp"
                     android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/md_theme_light_onPrimary"
                     android:drawablePadding="8dp"
-                    android:textColor="@color/grey"/>
+                    android:textColor="@color/md_theme_light_onPrimary"/>
 
 
                 <Button
@@ -62,7 +65,7 @@
                     android:textSize="18sp"
                     app:cornerRadius = "30dp"/>
 
-                <TextView
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/forgot_password"
@@ -70,19 +73,25 @@
                     android:layout_marginTop="6dp"
                     android:padding="8dp"
                     android:text="Forgot Password?"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/md_theme_light_onPrimary"
+                    android:shadowColor="@color/md_theme_light_shadow"
+                    android:shadowRadius="50"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-                <TextView
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/signupRedirectText"
-                    android:text="Not yet registered? Signup"
+                    android:text="Don't have an account? Create"
                     android:layout_gravity="center"
                     android:padding="8dp"
-                    android:layout_marginTop="14dp"
+                    android:layout_marginTop="6dp"
                     android:textSize="18sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/md_theme_light_onPrimary"
+                    android:shadowColor="@color/md_theme_light_shadow"
+                    android:shadowRadius="50"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
         </LinearLayout>
     </LinearLayout>

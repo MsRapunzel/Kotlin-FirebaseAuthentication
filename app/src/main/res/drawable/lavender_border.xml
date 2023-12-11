@@ -6,9 +6,10 @@
         android:radius="20dp"/>
 
     <stroke
-        android:color="@color/accent"
+        android:color="@color/md_theme_light_primaryContainer"
         android:width="2dp"/>
+
     <solid
-        android:color="@color/fill_form_opacity"/>
+        android:color="@color/md_theme_light_secondary"/>
 
 </shape>

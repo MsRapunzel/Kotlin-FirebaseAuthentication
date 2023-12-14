@@ -1,29 +1,61 @@
 <resources>
+
+
     <string name="test">Test</string>
-    <string name="check_email">Check your email</string>
     <string name="app_name">RestaurantReviewApp</string>
-    <string name="no_user_email">Please sign in above</string>
-    <string name="successful_auth">You are currently logged in with %s</string>
-    <string name="login_failure">Sorry, you could not be signed with that email / password combination.</string>
-    <string name="register_while_logged_in">Please logout before trying to log in.</string>
-    <string name="register_failure">Failed to sign in.</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="successful_auth">You are currently logged in with\n%s</string>
+    <string name="no_user_email">You are not logged in.</string>
+
+
+    <string name="snackbar_login_failure">Sorry, you could not be signed with that email / password combination.</string>
+    <string name="snackbar_register_failure">Failed to sign in.</string>
+    <string name="snackbar_check_your_email">Check your email</string>
+    <string name="snackbar_password_reset_failed">Password reset failed</string>
+    <string name="snackbar_exception">Incorrect action</string>
+    <string name="snackbar_empty_fields">Fields cannot be empty</string>
+    <string name="snackbar_add_review_button">\"Add review\" button</string>
+    <string name="snackbar_profile_not_ready">Your profile is not ready yet</string>
+    <string name="snackbar_collection_not_ready">Collection is not ready yet</string>
+    <string name="snackbar_feed_not_ready">Feed is not ready yet</string>
+    <string name="snackbar_home_not_ready">Home is not ready yet</string>
+
+
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="title_activity_home_page">HomePage</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="check_your_email">Check your email</string>
-    <string name="password_reset_failed">Password reset failed</string>
-    <string name="add">add</string>
+
+
+    <string name="title_activity_maps">MapsActivity</string>
+
+
+    <string name="text_forgot_password">Forgot Password</string>
+    <string name="text_email_fill">Enter your email address:</string>
+    <string name="skip">Skip for now</string>
+
+
+    <string name="button_cancel">Cancel</string>
+    <string name="button_reset">Reset</string>
+    <string name="button_post_review">Post</string>
+    <string name="button_login">Login</string>
+    <string name="button_forgot_password">Forgot Password?</string>
+    <string name="button_create_account">Don\'t have an account? Create</string>
+    <string name="button_sign_up">Sign Up</string>
+    <string name="button_already_a_user">Already a user?</string>
+
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_description">Description</string>
+
+
+    <string name="content_description_add">add</string>
+    <string name="content_description_map_view">Map View</string>
+
+
+    <string name="bottom_appbar_home">Home</string>
+    <string name="bottom_appbar_feed">Feed</string>
+    <string name="bottom_appbar_collection">Collection</string>
+    <string name="bottom_appbar_profile">Profile</string>
+    <string name="button_logout">Log out</string>
+
 
 </resources>

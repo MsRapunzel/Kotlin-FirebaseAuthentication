@@ -5,13 +5,11 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import com.example.restaurantreviewapp.databinding.ActivityLogInBinding
 import com.example.restaurantreviewapp.databinding.DialogForgotBinding
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 class LogInActivity : AppCompatActivity() {
@@ -19,7 +17,6 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLogInBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var dialogBinding: DialogForgotBinding
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,11 +40,11 @@ class LogInActivity : AppCompatActivity() {
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
-                        displayMessage(binding.loginButton, "Exception")
+                        Utils.displayMessage(binding.loginButton, getString(R.string.snackbar_exception))
                     }
                 }
             } else {
-                displayMessage(binding.loginButton, "Fields cannot be empty")
+                Utils.displayMessage(binding.loginButton, getString(R.string.snackbar_empty_fields))
             }
         }
 
@@ -60,7 +57,7 @@ class LogInActivity : AppCompatActivity() {
             val dialog = builder.create()
 
             view.findViewById<Button>(R.id.btnReset).setOnClickListener {
-                compareEmail(userEmail)
+                checkEmail(userEmail)
                 dialog.dismiss()
             }
             view.findViewById<Button>(R.id.btnCancel).setOnClickListener {
@@ -72,14 +69,18 @@ class LogInActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        binding.signupRedirectText.setOnClickListener {
+        binding.signupRedirectButton.setOnClickListener {
             val newIntent = Intent(this, SignUpActivity::class.java)
+            startActivity(newIntent)
+        }
+
+        binding.skipButton.setOnClickListener{
+            val newIntent = Intent(this, MainActivity::class.java)
             startActivity(newIntent)
         }
     }
 
-    //Outside onCreate
-    private fun compareEmail(email: EditText){
+    private fun checkEmail(email: EditText){
         if (email.text.toString().isEmpty()){
             return
         }
@@ -89,15 +90,10 @@ class LogInActivity : AppCompatActivity() {
         firebaseAuth.sendPasswordResetEmail(email.text.toString())
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    displayMessage(binding.loginButton, getString(R.string.check_your_email))
+                    Utils.displayMessage(binding.loginButton, getString(R.string.snackbar_check_your_email))
                 } else {
-                    displayMessage(binding.loginButton, getString(R.string.password_reset_failed))
+                    Utils.displayMessage(binding.loginButton, getString(R.string.snackbar_password_reset_failed))
                 }
             }
-    }
-
-    private fun displayMessage(view: View, msgText: String) {
-        val sb = Snackbar.make(view, msgText, Snackbar.LENGTH_SHORT)
-        sb.show()
     }
 }

@@ -3,9 +3,7 @@ package com.example.restaurantreviewapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.example.restaurantreviewapp.databinding.ActivitySignUpBinding
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpActivity : AppCompatActivity() {
@@ -32,26 +30,27 @@ class SignUpActivity : AppCompatActivity() {
                             val intent = Intent(this, LogInActivity::class.java)
                             startActivity(intent)
                         } else {
-                            displayMessage(
+                            Utils.displayMessage(
                                 binding.registerButton,
-                                getString(R.string.register_failure)
+                                getString(R.string.snackbar_register_failure)
                             )
                         }
                     }
             } else {
-                displayMessage(binding.registerButton, getString(R.string.login_failure))
+                Utils.displayMessage(binding.registerButton, getString(R.string.snackbar_login_failure))
             }
         }
+
         binding.loginRedirectButton.setOnClickListener {
-            displayMessage(binding.loginRedirectButton, getString(R.string.test))
             val loginIntent = Intent(this, LogInActivity::class.java)
             startActivity(loginIntent)
         }
-    }
 
-    private fun displayMessage(view: View, msgText: String) {
-        val sb = Snackbar.make(view, msgText, Snackbar.LENGTH_SHORT)
-        sb.show()
+
+        binding.skipButton.setOnClickListener{
+            val newIntent = Intent(this, MainActivity::class.java)
+            startActivity(newIntent)
+        }
     }
 }
 

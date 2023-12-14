@@ -1,49 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/md_theme_light_background"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/fragment_layout"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/greeting_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/successful_auth"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/logout_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/button_logout"
+            android:textSize="18sp"
+            app:cornerRadius="30dp"
+            tools:ignore="VisualLintButtonSize" />
+
+    </LinearLayout>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/frame_layout"/>
+        android:layout_gravity="end|bottom|center">
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bottomAppBar"
-        android:layout_gravity="bottom"
-        android:background="@color/md_theme_light_onSecondary"
-        tools:ignore="VisualLintBottomAppBar">
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/md_theme_light_onSecondary"
+            tools:ignore="VisualLintBottomAppBar">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/bottom_menu"
+                tools:ignore="VisualLintBottomNav" />
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bottomNavigationView"
-            android:layout_marginEnd="20dp"
-            app:labelVisibilityMode="labeled"
-            android:background="@android:color/transparent"
-            app:menu="@menu/bottom_menu"
-            tools:ignore="VisualLintBottomNav" />
+            android:layout_marginBottom="82dp"
+            android:backgroundTint="@color/md_theme_light_primary"
+            android:contentDescription="@string/content_description_add"
+            android:src="@drawable/baseline_add_24"
+            app:layout_anchor="@id/bottomAppBar"
+            app:maxImageSize="40dp"
+            app:rippleColor="@color/md_theme_light_primary"
+            app:tint="@color/md_theme_light_onPrimary" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    </com.google.android.material.bottomappbar.BottomAppBar>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/md_theme_light_primary"
-        android:contentDescription="@string/add"
-        android:src="@drawable/baseline_add_24"
-        app:layout_anchor="@id/bottomAppBar"
-        app:maxImageSize="40dp"
-        app:rippleColor="@color/md_theme_light_primary"
-        app:tint="@color/md_theme_light_onPrimary"
-        app:layout_anchorGravity="end|bottom"
-        android:layout_marginBottom="82dp"/>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>
